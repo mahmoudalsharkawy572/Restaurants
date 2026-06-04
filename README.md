@@ -335,6 +335,17 @@ Handles all data persistence and external service integration:
 |--------|----------|-------------|
 | `POST` | `/api/identity/register` | Register new user |
 | `POST` | `/api/identity/login` | User login |
+| `POST` | `/api/identity/refresh` | Refresh JWT token |
+| `GET` | `/api/identity/confirmEmail` | Confirm user email |
+| `POST` | `/api/identity/resendConfirmationEmail` | Resend email confirmation |
+| `POST` | `/api/identity/forgotPassword` | Request password reset |
+| `POST` | `/api/identity/resetPassword` | Reset user password |
+| `POST` | `/api/identity/manage/2fa` | Manage two-factor authentication |
+| `GET` | `/api/identity/manage/info` | Get user account information |
+| `POST` | `/api/identity/manage/info` | Update user account information |
+| `PATCH` | `/api/identity/update-user-details` | Update user profile details |
+| `POST` | `/api/identity/assign-user-role` | Assign role to user |
+| `POST` | `/api/identity/unassign-user-role` | Remove role from user |
 
 ---
 
@@ -429,6 +440,8 @@ public async Task<IActionResult> GetAll()
 - Password reset functionality
 - Role-based access control
 - Token generation and validation
+- Two-factor authentication (2FA)
+- User lockout policies
 ```
 
 ### JWT Support
@@ -436,6 +449,7 @@ public async Task<IActionResult> GetAll()
 - Automatic token management
 - Secure session handling
 - Configurable token expiration
+- Token refresh mechanism
 
 ### Security Features
 - ✅ HTTPS enforcement
@@ -444,6 +458,9 @@ public async Task<IActionResult> GetAll()
 - ✅ Global exception handling
 - ✅ SQL injection prevention (EF Core)
 - ✅ Password security best practices
+- ✅ Two-factor authentication support
+- ✅ Email confirmation workflow
+- ✅ Role-based authorization
 
 ---
 
